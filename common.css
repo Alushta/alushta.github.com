@@ -62,37 +62,40 @@ body {
   }
 
   #gallery .help {
-    font-size: 0.9em;
     color: #999;
+    font-size: 0.9em;
     margin-bottom: 40px;
   }
 
   #gallery .thumbs {
-    width: 100%;
     clear: both;
+    display: table;
     float: none;
-    position:relative;
-    margin: 0 0 0 -100px;
     height: 180px;
+    margin: 0 0 0 -100px;
+    position: relative;
+    width: 100%;
   }
 
     #gallery .thumbs div {
-      float: left;
-      height: auto;
-      margin: 0 20px 0 0;
+      display: table-cell;
       vertical-align: middle;
-      display: table;
-      height: 180px;
+      position: relative;
     }
 
     #gallery .thumbs div:last-of-type {
       margin-right: 0;
     }
-
+    
       #gallery .thumbs div img {
         box-shadow: #000 0 3px 10px;
+        margin-right: 30px;
         cursor: pointer;
         display: table-cell;
+      }
+
+      #gallery .thumbs div:last-of-type img {
+        margin-right: 0;
       }
 
 #map {
@@ -115,3 +118,44 @@ body {
     height: 500px;
     background: #eee;
   }
+
+#big_picture_holder {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  text-align: center;
+  display: table;
+  display: none;
+}
+
+  #big_picture_holder #big_picture {
+    margin: 0 auto;
+    padding: 0 auto;
+    position: relative;
+    opacity: 1;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  
+    #big_picture_holder #big_picture img {
+      box-shadow: #000 0 0 100px;
+      cursor: pointer;
+    }
+
+#big_picture_help {
+  position: fixed;
+  z-index: 2;
+  bottom: 30px;
+  left: 50%;
+  width: 400px;
+  color: #fff;
+  font-size: 0.8em;
+  background: #000;
+  border-radius: 30px;
+  padding: 5px 10px;
+  margin: 0 0 0 -200px;
+  display: none;
+}
