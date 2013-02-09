@@ -5,7 +5,7 @@ body {
 
 #header {
   font: normal 3em Georgia ;
-  position: absolute;
+  position: relative;
   width: 30%;
   top: 0;
   left: 0;
@@ -41,17 +41,17 @@ body {
   }
 
 #about {
-  position: absolute;
+  position: relative;
   width: 60%;
-  margin: 300px 0 0 150px;
+  margin: 110px 0 0 150px;
   font-size: 1.3em;
   line-height: 1.5em;
 }
 
 #gallery {
-  position: absolute;
+  position: relative;
   width: 80%;
-  margin: 635px 0 30px 150px;
+  margin: 70px 0 30px 150px;
 }
 
   #gallery .title,
@@ -67,39 +67,42 @@ body {
     margin-bottom: 40px;
   }
 
-  #gallery ul {
+  #gallery .thumbs {
     width: 100%;
     clear: both;
     float: none;
-    position: absolute;
+    position:relative;
     margin: 0 0 0 -100px;
-    display: table-row;
+    height: 180px;
   }
 
-    #gallery ul li {
-      list-style: none;
+    #gallery .thumbs div {
       float: left;
+      height: auto;
+      margin: 0 20px 0 0;
+      vertical-align: middle;
       display: table;
       height: 180px;
-      vertical-align: middle;
-      margin: 0 25px 0 0;
     }
 
-    #gallery ul li:last-of-type {
+    #gallery .thumbs div:last-of-type {
       margin-right: 0;
     }
 
-      #gallery ul li img {
+      #gallery .thumbs div img {
         box-shadow: #000 0 3px 10px;
         cursor: pointer;
+        display: table-cell;
       }
 
 #map {
-  position: absolute;
+  position: relative;
   width: 100%;
   top: 0;
   left: 0;
-  margin: 950px 0 0 0;
+  margin: 50px 0 0 0;
+  clear: both;
+  float: none;
 }
 
   #map .title {
