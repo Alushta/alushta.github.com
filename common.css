@@ -1,0 +1,21 @@
+body {
+  font: normal 1em Helvetica, arial, tahoma, sans-serif;
+  color: #333;
+}
+
+#header {
+  font: normal 3em Georgia ;
+  position: absolute;
+  width: 30%;
+  top: 0;
+  left: 0;
+  margin: 40px 0 0 80px;
+  color: #666;
+}
+
+#header span {
+  font-size: 1.8em;
+  display: block;
+  margin: -10px 0 0 -40px;
+  color: #333;
+}
