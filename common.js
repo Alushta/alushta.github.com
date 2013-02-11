@@ -36,7 +36,6 @@
   var big_picture = {
     
     open: function () {
-      var bp = big_picture;
       var image_name = this.getElementsByTagName("img").length > 0 ? 
         this.getElementsByTagName("img")[0].src.split("/").pop() : "";
 
