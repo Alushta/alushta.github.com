@@ -57,7 +57,8 @@ body {
 }
 
   #gallery .title,
-  #map .title {
+  #map .title,
+  #calendar-wrapper .title {
     font: normal 1.7em Georgia;
     color: #333;
     margin-bottom: 5px;
@@ -99,6 +100,63 @@ body {
       #gallery .thumbs div:last-of-type img {
         margin-right: 0;
       }
+
+#calendar-wrapper {
+  margin: 60px 0 30px 0;
+  width: 100%;
+  clear: both;
+  float: none;
+}
+
+  #calendar-wrapper .title {
+    margin: 0 0 50px 150px;
+  }
+
+  #calendar-wrapper #calendar {
+    margin-left: 50px;
+    min-width: 1200px
+    overflow: hidden;
+  }
+
+    #calendar-wrapper #calendar .month {
+      width: 100%;
+      float: none;
+      clear: both;
+      height: 40px;
+    }
+
+    #calendar-wrapper #calendar .month .name {
+      float: left;
+      width: 60px;
+      height: 30px;
+      font-size: 0.6em;
+      color: #999;
+      text-align: right;
+      margin-right: 10px;
+      margin-top: 7px;
+      font: italic 0.8em Georgia;
+    }
+
+    #calendar-wrapper #calendar .month .day {
+      color: #666;
+      float: left;
+      font-size: 0.8em;
+      height: 22px;
+      width: 22px;
+      padding: 7px 0 0 8px;
+    }
+
+    #calendar-wrapper #calendar .month .holiday {
+      color: #BF2A23;
+      font-weight: bold;
+    }
+
+    #calendar-wrapper #calendar .month .booked {
+      color: #333;
+      font-weight: bold;
+      border-radius: 20px;
+      background: url(images/booked-bg/1.png) no-repeat 0 0;
+    }
 
 #map {
   position: relative;
