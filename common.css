@@ -64,7 +64,8 @@ body {
     margin-bottom: 5px;
   }
 
-  #gallery .help {
+  #gallery .help,
+  #calendar-wrapper .help {
     color: #999;
     font-size: 0.9em;
     margin-bottom: 40px;
@@ -110,6 +111,10 @@ body {
 
   #calendar-wrapper .title {
     margin: 0 0 50px 150px;
+  }
+
+  #calendar-wrapper .help {
+    margin: -40px 0 50px 150px;
   }
 
   #calendar-wrapper #calendar {
