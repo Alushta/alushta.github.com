@@ -4,7 +4,7 @@
 
   // access point
   function window_load_handler () {
-    photos.add_handlers_for_thumbs ();
+    photos.initialize ();
     calendar.initialize ();
   }
 
@@ -19,8 +19,9 @@
   var photos = {
 
     // setting actions for each thumb
-    add_handlers_for_thumbs: function () {
-      var i, j, gallery_divs = $("gallery").getElementsByTagName("div");
+    initialize: function () {
+      var i, j, 
+          gallery_divs = $("gallery").getElementsByTagName("div");
 
       for (i in gallery_divs) {
         if (gallery_divs.hasOwnProperty(i)) {
@@ -143,14 +144,18 @@
 
         // setting marks for booked days
         for (i = 0; i < dates.length; i++) {
-          var date = new Date(dates[i]),
-              month_el = $("m-" + (date.getMonth() + 1));
+          try {
+            var date = new Date(dates[i]),
+                month_el = document.getElementById("m-" + (date.getMonth() + 1));
 
-          for (j = 0; j < month_el.childNodes.length; j++) {
-            var day = month_el.childNodes[j];
-            if (day.getAttribute("id") === "d-" + (date.getDate())) {
-              day.className = day.className + " booked";
+            for (j = 0; j < month_el.childNodes.length; j++) {
+              var day = month_el.childNodes[j];
+              if (day.getAttribute("id") === "d-" + (date.getDate())) {
+                day.className = day.className + " booked";
+              }
             }
+          } catch (err) {
+            break;
           }
         }
 
@@ -169,15 +174,19 @@
 
       initialize: function () {
         var request = window.XMLHttpRequest ? 
-          new XMLHttpRequest() : 
-          new ActiveXObject("Microsoft.XMLHTTP");
+                        new XMLHttpRequest() : 
+                        new ActiveXObject("Microsoft.XMLHTTP"),
+            url = "https://docs.google.com/spreadsheet/pub?key=0AjgEruJx5cn2dFhaREdqQUVULTFSS0ZQbjExMHBZSlE&single=true&gid=0&output=txt";
 
-        request.open("GET", "booked_dates", true);
+        request.open("GET", url, true);
         request.send();
         request.onload = function () {
+          console.log(request.responseText);
           calendar.book_dates.draw(
             request.responseText.split(/\n/).filter(function (i) {
               return i.length > 0;
+            }).map(function (date) {
+              return date.replace(/\-/g, '/');
             })
           );
         };
