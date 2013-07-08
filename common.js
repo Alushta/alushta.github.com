@@ -1,5 +1,5 @@
 (function(){
-  
+
   window.addEventListener('load', window_load_handler, false);
 
   // access point
@@ -9,7 +9,7 @@
   }
 
 
-  // helper for selectors 
+  // helper for selectors
   function $ (selector) {
     return document.getElementById(selector);
   }
@@ -20,7 +20,7 @@
 
     // setting actions for each thumb
     initialize: function () {
-      var i, j, 
+      var i, j,
           gallery_divs = $("gallery").getElementsByTagName("div");
 
       for (i in gallery_divs) {
@@ -40,7 +40,7 @@
       }
     },
 
-    
+
     open: function () {
       var image_name = this.getElementsByTagName("img").length > 0 ? 
         this.getElementsByTagName("img")[0].src.split("/").pop() : "";
@@ -61,7 +61,7 @@
       $("big_picture_help").style.display = "none";
     },
 
-    
+
     place_image: function (image_name) {
       var image = $("big_picture").getElementsByTagName("img")[0];
       image.src = "images/big/" + image_name;
@@ -80,7 +80,7 @@
 
   var calendar = {
     draw: function () {
-      var month, 
+      var month,
           calendar = $("calendar"),
           date = new Date(),
           year = date.getFullYear(),
@@ -104,7 +104,7 @@
           // margin from beggining of the week
           if (day === 1) {
             var dow = (new Date(date.getYear() + "/" + month + "/" + day)).getDay();
-            
+
             if (dow !== 6) {
               var blank_day;
               for (blank_day = 0; blank_day <= dow; blank_day++) {
@@ -162,7 +162,7 @@
         }
 
         // randomly coloring backgrounds for booked days
-        var divs = document.getElementsByTagName("div"), 
+        var divs = document.getElementsByTagName("div"),
             k;
 
         for (k = 0; k < divs.length; k++) {
@@ -175,8 +175,8 @@
 
 
       initialize: function () {
-        var request = window.XMLHttpRequest ? 
-                        new XMLHttpRequest() : 
+        var request = window.XMLHttpRequest ?
+                        new XMLHttpRequest() :
                         new ActiveXObject("Microsoft.XMLHTTP"),
             url = "https://docs.google.com/spreadsheet/pub?key=0AjgEruJx5cn2dFhaREdqQUVULTFSS0ZQbjExMHBZSlE&single=true&gid=0&output=txt";
 
